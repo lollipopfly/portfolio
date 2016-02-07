@@ -1,0 +1,258 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* FONTS
+* ----------------------------------------------------------------------------------------------------
+*/
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url("../fonts/HelveticaNeue-Bold.eot?") format("eot"), url("../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../fonts/HelveticaNeue-Bold.ttf") format("truetype"), url("../fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg");
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url("../fonts/HelveticaNeue-Medium.eot?") format("eot"), url("../fonts/HelveticaNeue-Medium.woff") format("woff"), url("../fonts/HelveticaNeue-Medium.ttf") format("truetype"), url("../fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium") format("svg");
+  font-weight: 500; }
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url("../fonts/HelveticaNeue.eot?") format("eot"), url("../fonts/HelveticaNeue.woff") format("woff"), url("../fonts/HelveticaNeue.ttf") format("truetype"), url("../fonts/HelveticaNeue.svg#HelveticaNeue") format("svg");
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url("../fonts/HelveticaNeue-Light.eot?") format("eot"), url("../fonts/HelveticaNeue-Light.woff") format("woff"), url("../fonts/HelveticaNeue-Light.ttf") format("truetype"), url("../fonts/HelveticaNeue-Light.svg#HelveticaNeue-Light") format("svg");
+  font-weight: 300; }
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* VARIABLES
+* ----------------------------------------------------------------------------------------------------
+*/
+/**
+* ----------------------------------------------------------------------------------------------------
+* MIXINS
+* ----------------------------------------------------------------------------------------------------
+*/
+/**
+* ----------------------------------------------------------------------------------------------------
+* MAIN STYLES
+* ----------------------------------------------------------------------------------------------------
+*/
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+  display: inline-block; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-family: 'HelveticaNeue';
+  color: #2c2c2c; }
+
+.wrap {
+  min-height: 100%;
+  margin-bottom: -50px; }
+
+.wrap:after {
+  content: "";
+  display: block; }
+
+.footer, .wrap:after {
+  height: 50px; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+a {
+  color: #2c2c2c;
+  outline: none !important;
+  -webkit-transition: color .3s;
+  transition: color .3s; }
+  a:hover,
+  a:active,
+  a:focus {
+    color: #6a6a6a !important; }
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 36px; }
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  border: #e3e3e3;
+  outline: none;
+  height: 40px;
+  padding-left: 10px; }
+
+textarea {
+  height: auto; }
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* Helpers
+* ----------------------------------------------------------------------------------------------------
+*/
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  color: #2c2c2c;
+  border: 1px solid #2c2c2c;
+  text-transform: uppercase; }
+  .btn:hover,
+  .btn:active,
+  .btn:focus {
+    text-decoration: none;
+    background: #e3e3e3;
+    color: #fff;
+    -webkit-transition: .4s color;
+    transition: .4s color;
+    -webkit-transition: .3s background;
+    transition: .3s background; }
+
+/*------------------------------------*    Boostrap menu
+\*------------------------------------*/
+.navbar {
+  border: none; }
+
+.navbar-default {
+  background: none; }
+
+.navbar-collapse {
+  padding: 0; }
+
+.navbar-default .navbar-brand {
+  color: #2c2c2c; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #2c2c2c; }
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* @MEDIA
+* ----------------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 320px) {
+  body {
+    width: 320px; } }
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* COMPONENTS
+* ----------------------------------------------------------------------------------------------------
+*/
+.header {
+  padding-top: 30px;
+  margin-bottom: 80px; }
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 23px;
+  font-weight: 700; }
+
+.nav > li > a {
+  padding: 0;
+  font-size: 18px;
+  text-transform: uppercase; }
+
+.navbar__item {
+  margin-right: 32px; }
+  .navbar__item:last-child {
+    margin-right: 0; }
+  .navbar__item a {
+    -webkit-transition: text-decoration .3s;
+    transition: text-decoration .3s; }
+    .navbar__item a:hover {
+      text-decoration: line-through !important; }
+
+/**
+***************************************************************
+* =Main
+***************************************************************
+**/
+.main {
+  margin-bottom: 35px; }
+
+.job-title {
+  font-size: 80px;
+  margin-bottom: 95px; }
+  .job-title span {
+    display: block; }
+
+/*------------------------------------*    Recent
+\*------------------------------------*/
+.recent h2 {
+  margin-bottom: 25px;
+  text-align: center; }
+
+.recent__item {
+  margin-bottom: 10px; }
+
+/**
+***************************************************************
+* =Footer
+***************************************************************
+**/
+.social__item {
+  float: left;
+  margin-right: 25px; }
+  .social__item:last-child {
+    margin-right: 0; }
+
+.footer-email {
+  text-align: right; }
+
+/*# sourceMappingURL=../map/style.css.map */

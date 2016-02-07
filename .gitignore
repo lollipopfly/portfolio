@@ -1,0 +1,10 @@
+public/bower/
+public/uploads/
+/vendor
+.idea/
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.htaccess
+

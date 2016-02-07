@@ -1,0 +1,210 @@
+/**
+* ----------------------------------------------------------------------------------------------------
+* FONTS
+* ----------------------------------------------------------------------------------------------------
+*/
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../fonts/HelveticaNeue-Bold.eot?') format('eot'),
+	     url('../fonts/HelveticaNeue-Bold.woff') format('woff'),
+	     url('../fonts/HelveticaNeue-Bold.ttf')  format('truetype'),
+	     url('../fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold') format('svg');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../fonts/HelveticaNeue-Medium.eot?') format('eot'),
+	     url('../fonts/HelveticaNeue-Medium.woff') format('woff'),
+	     url('../fonts/HelveticaNeue-Medium.ttf')  format('truetype'),
+	     url('../fonts/HelveticaNeue-Medium.svg#HelveticaNeue-Medium') format('svg');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../fonts/HelveticaNeue.eot?') format('eot'),
+	     url('../fonts/HelveticaNeue.woff') format('woff'),
+	     url('../fonts/HelveticaNeue.ttf')  format('truetype'),
+	     url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../fonts/HelveticaNeue-Light.eot?') format('eot'),
+	     url('../fonts/HelveticaNeue-Light.woff') format('woff'),
+	     url('../fonts/HelveticaNeue-Light.ttf')  format('truetype'),
+	     url('../fonts/HelveticaNeue-Light.svg#HelveticaNeue-Light') format('svg');
+	font-weight: 300;
+}
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* VARIABLES
+* ----------------------------------------------------------------------------------------------------
+*/
+
+$white: #fff;
+$black: #2c2c2c;
+$black-light: #6a6a6a;
+$gray: #e3e3e3;
+
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* MIXINS
+* ----------------------------------------------------------------------------------------------------
+*/
+
+@custom-selector :--hoverous :hover, :active, :focus;
+
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* MAIN STYLES
+* ----------------------------------------------------------------------------------------------------
+*/
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	line-height: 0;
+	clear: both;
+	visibility: hidden;
+	display: inline-block;
+}
+
+// Stcky Footer
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: 'HelveticaNeue';
+	color: $black;
+}
+
+.wrap {
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+.wrap:after {
+	content: "";
+	display: block;
+}
+
+.footer, .wrap:after {
+	height: 50px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color:$black;
+	outline: none !important; // for firefox
+	transition: color .3s;
+
+	&:--hoverous {
+			color: $black-light !important;
+	}
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 36px;
+
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+	border: #e3e3e3;
+	outline: none;
+	height: 40px;
+	padding-left: 10px;
+}
+
+textarea {
+	height: auto;
+}
+
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* Helpers
+* ----------------------------------------------------------------------------------------------------
+*/
+
+.btn {
+	display: inline-block;
+	padding: 9px 20px;
+	color: $black;
+	border: 1px solid $black;
+	text-transform: uppercase;
+
+	&:--hoverous {
+		text-decoration: none;
+		background: $gray;
+		color: $white;
+		transition: .4s color;
+		transition: .3s background;
+	}
+}
+
+/*------------------------------------*\
+    Boostrap menu
+\*------------------------------------*/
+
+.navbar {
+	border: none;
+}
+
+.navbar-default {
+	background: none;
+}
+
+.navbar-collapse {
+	padding: 0;
+}
+
+.navbar-default .navbar-brand {
+	color: $black;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: $black;
+}
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* @MEDIA
+* ----------------------------------------------------------------------------------------------------
+*/
+
+@media screen and (max-width:320px) {
+	body {
+		width: 320px;
+	}
+}
+
+/**
+* ----------------------------------------------------------------------------------------------------
+* COMPONENTS
+* ----------------------------------------------------------------------------------------------------
+*/
+
+
+
+
