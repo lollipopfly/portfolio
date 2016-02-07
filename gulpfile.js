@@ -28,10 +28,11 @@ gulp.task('sass', function() {
 
   return gulp.src([
   		  'resources/assets/sass/reset.scss',
+  		  'public/css/bootstrap.min.css',
 		  'resources/assets/sass/main.scss',
 		  'public/css/sprite.css',
 		  'resources/assets/sass/style.scss',])
-	.pipe(sourcemaps.init())
+	//.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(concat('style.css'))
 	//.pipe(sass().on('error', error))
@@ -112,7 +113,7 @@ elixir(function(mix) {
 \*------------------------------------*/
 
 gulp.task('watch', function() {
-	gulp.watch('resource/assets/sass/**/*.scss', { interval: 500 }, ['sass', 'notify']);
+	gulp.watch('resources/assets/sass/**/*.scss', { interval: 500 }, ['sass', 'notify']);
 	gulp.watch('public/js/common.js', { interval: 500 }, ['compress', 'notify']);
 	gulp.watch('public/images/main/*.png', { interval: 500 }, ['sprite']);
 });
