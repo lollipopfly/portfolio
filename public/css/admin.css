@@ -10,3 +10,29 @@
 	background: #95AAD9 !important;
 	color: #171717 !important;
 }
+
+/*------------------------------------*\
+    Recent
+\*------------------------------------*/
+
+.recent {
+	padding-left: 0;
+}
+
+.recent__item {
+	margin-bottom: 20px;
+	list-style-type: none;
+}
+
+.recent__link {
+	float: left;
+}
+
+.recent__del {
+	background: none;
+	border: none;
+	font-size: 21px;
+	color: red;
+	margin-top: -2px;
+	outline: none;
+}

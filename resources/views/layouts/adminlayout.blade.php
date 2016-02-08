@@ -22,11 +22,17 @@
 		<div class="row">
 			<aside class="col-md-3">
 				<div class="list-group">
-				  <a class="list-group-item list-group__blue" href="#"><i class="fa fa-home fa-plus"></i>&nbsp; Добавить работу</a>
+				  <a class="list-group-item list-group__blue" href="/admin/create/"><i class="fa fa-home fa-plus"></i>&nbsp; Добавить работу</a>
 				  <a class="list-group-item" href="#"><i class="fa fa-book fa-list"></i>&nbsp; Список всех работ</a>
 				</div>
 			</aside>
 			<div class="main col-md-9">
+				{{-- @include('partials.admin.flash') --}}
+				@if(Session::has('flash_message'))
+				    <div class="alert alert-success">
+				        {!! Session::get('flash_message') !!}
+				    </div>
+				@endif
 				@yield('content')
 			</div>
 		</div>
