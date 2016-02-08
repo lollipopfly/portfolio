@@ -4,8 +4,8 @@
         <!-- begin col-md-24  -->
         <div class="col-md-24">
             <h1 class="job-title">
-                <span class="job-title__top">Full-stack</span>
-                <span class="job-title__bottom">Web Developer</span>
+                <span class="job-title__top fadeInRight">Full-stack</span>
+                <span class="job-title__bottom fadeInLeft">Web Developer</span>
             </h1>
         </div>
         <!-- end  col-md-24 -->

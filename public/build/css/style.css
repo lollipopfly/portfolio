@@ -2971,6 +2971,94 @@ textarea {
     -webkit-transition: .3s background;
     transition: .3s background; }
 
+/*------------------------------------*    Animation
+\*------------------------------------*/
+.fadeInUp, .fadeInLeft, .fadeInRight {
+  -webkit-animation-duration: .8s;
+          animation-duration: .8s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out; }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
 /*------------------------------------*    Boostrap menu
 \*------------------------------------*/
 .navbar {
@@ -3007,6 +3095,7 @@ textarea {
   margin-bottom: 80px; }
 
 .logo {
+  position: relative;
   padding: 15px 0px;
   text-transform: uppercase;
   letter-spacing: 2px;

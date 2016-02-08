@@ -26,14 +26,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo" href="#">timur karshiev</a>
+                    <a class="navbar-brand logo fadeInUp" href="#">timur karshiev</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="navbar__item"><a href="/about">about</a></li>
-                        <li class="navbar__item"><a href="/contact">contact</a></li>
+                        <li class="navbar__item fadeInUp"><a href="/about">about</a></li>
+                        <li class="navbar__item fadeInUp"><a href="/contact">contact</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
