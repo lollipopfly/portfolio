@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo fadeInUp" href="#">timur karshiev</a>
+                    <a class="navbar-brand logo fadeInUp" href="/">timur karshiev</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
