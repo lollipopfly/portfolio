@@ -1,0 +1,12 @@
+.sidebar-list {
+	list-style-type: none;
+}
+
+.list-group__blue {
+	background: #AABEED;
+}
+
+.list-group__blue:hover {
+	background: #95AAD9 !important;
+	color: #171717 !important;
+}
