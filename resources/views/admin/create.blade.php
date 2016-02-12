@@ -39,10 +39,10 @@
 		{!! Form::submit('Создать', ['class' => 'create-form__submit btn btn-primary pull-right']) !!}
     {!! Form::close() !!}
 
-    		@if($errors->any())
-    	        @foreach($errors->all() as $error)
-    	            {{ $error }}
-    	        @endforeach
-        	@endif
+	@if($errors->any())
+        @foreach($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+	@endif
 
 @stop

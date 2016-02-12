@@ -2,7 +2,6 @@ var gulp         = require('gulp'),
 	postcss      = require('gulp-postcss'),
 	browserSync  = require('browser-sync').create(),
 	sass         = require('gulp-sass'),
-	sourcemaps   = require('gulp-sourcemaps'),
 	size         = require('postcss-size'),
 	autoprefixer = require('autoprefixer'),
 	concat       = require('gulp-concat'),
@@ -32,13 +31,11 @@ gulp.task('sass', function() {
 		  'resources/assets/sass/main.scss',
 		  'public/css/sprite.css',
 		  'resources/assets/sass/style.scss',])
-	//.pipe(sourcemaps.init())
 	.pipe(plumber())
 	.pipe(concat('style.css'))
 	//.pipe(sass().on('error', error))
 	.pipe(sass({outputStyle: 'nested'}))
 	.pipe(postcss(processors))
-	//.pipe(sourcemaps.write('../map/'))
 	.pipe(gulp.dest('public/build/css/'));
 });
 
