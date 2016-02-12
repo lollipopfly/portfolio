@@ -73,13 +73,6 @@ class AdminController extends Controller
          return redirect('admin');
     }
 
-    public function generateImageName($imageName) {
-        // generate hash for uniq image name
-        $hash = str_random(4);
-        $imageName = $hash . '_' . $imageName;
-        return $imageName;
-    }
-
     /**
      * Display the specified resource.
      *
@@ -88,7 +81,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -99,7 +92,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $works = new Works;
+        $work = $works->where('id', $id)->first();
+        return view('admin.update')->with('work', $work);
     }
 
     /**
@@ -111,7 +106,12 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $works = new Works;
+        $data = $request->all();
+        dd($data);
+        $works->where('id', $id)->update($data);
+
+        return view('admin');
     }
 
     /**
@@ -122,6 +122,18 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $works = new Works;
+        $work = $works->where('id', '=', $id)->first();
+        $works->where('id', '=', $id)->delete();
+
+        session()->flash('flash_message' , 'Сайт ' . $work->title . ' удален!');
+        return redirect('admin');
+    }
+
+    public function generateImageName($imageName) {
+        // generate hash for uniq image name
+        $hash = str_random(4);
+        $imageName = $hash . '_' . $imageName;
+        return $imageName;
     }
 }

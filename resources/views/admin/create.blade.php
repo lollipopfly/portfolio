@@ -1,5 +1,6 @@
 @extends('layouts.adminlayout')
 @section('content')
+	<h1>Добавить Сайт</h1>
 	{!! Form::open(array('url' => 'admin', 'files' => 'true', 'class' => 'create-form',)) !!}
 		<div class="form-group">
 		    {!! Form::label('title', 'Название', ['class' => 'create_form__label']) !!}
