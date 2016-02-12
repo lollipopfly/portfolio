@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(1,10) as $index) {
             DB::table('works')->insert([
                 'title' => $faker->company,
-                'overiview' => $faker->text(),
+                'overview' => $faker->text(),
                 'image' => $faker->imageUrl(360,360),
                 'platform' => $faker->lastName(),
                 'role' => $faker->lastName(),

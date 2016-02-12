@@ -22,8 +22,8 @@
 		<div class="row">
 			<aside class="col-md-3">
 				<div class="list-group">
+				  <a class="list-group-item" href="/admin/"><i class="fa fa-book fa-list"></i>&nbsp; Список всех работ</a>
 				  <a class="list-group-item list-group__blue" href="/admin/create/"><i class="fa fa-home fa-plus"></i>&nbsp; Добавить работу</a>
-				  <a class="list-group-item" href="#"><i class="fa fa-book fa-list"></i>&nbsp; Список всех работ</a>
 				</div>
 			</aside>
 			<div class="main col-md-9">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateWorkRequest;
 use App\Http\Controllers\Controller;
 
 use App\Works; // for database
@@ -12,6 +13,9 @@ use HTML;
 
 class AdminController extends Controller
 {
+
+    public $uploadsFolder = 'uploads/';
+
     /**
      * Display a listing of the resource.
      *
@@ -40,17 +44,40 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateWorkRequest $request)
     {
-         // $works = new Works;
-    	// dd($request->all());
-    	Works::create($request->all());
-         // $works->title = $request->title;
-         // $works->save();
+         $works = new Works;
+         $works->title = $request->title;
+         $works->overview = $request->overview;
+         $works->platform = $request->platform;
+         $works->role = $request->role;
+         $works->link = $request->link;
+         $works->tags = $request->tags;
+
+         if( $request->hasFile('image') ) {
+            $image = $request->file('image');
+            // 1 получаем имя файла
+            $imageName = $image->getClientOriginalName();
+            // 1.2 Генерируем имя
+            $imageName = $this->generateImageName($imageName);
+            // 1.3 перемещаем файл
+            $request->file('image')->move($this->uploadsFolder, $imageName);
+            // 1.4 Забиваем имя файла
+            $works->image = $this->uploadsFolder . $imageName;
+        }
+
+         $works->save();
 
 
          session()->flash('flash_message', 'Сайт добавлен!');
          return redirect('admin');
+    }
+
+    public function generateImageName($imageName) {
+        // generate hash for uniq image name
+        $hash = str_random(4);
+        $imageName = $hash . '_' . $imageName;
+        return $imageName;
     }
 
     /**
