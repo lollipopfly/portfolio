@@ -74,11 +74,94 @@
 	margin-bottom: 10px;
 }
 
-/**
-***************************************************************
-* =Footer
-***************************************************************
-**/
+/*------------------------------------*\
+    Work
+\*------------------------------------*/
+
+.work-list {
+    margin-bottom: 60px;
+}
+
+.work-list li {
+    margin-bottom: 5px;
+}
+
+.work__title {
+    font-size: 72px;
+}
+
+.work__role {
+    color: $gray-bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.work__platform {
+    color: $gray-bold;
+    font-size: 20px;
+}
+
+.work__platform--title {
+    color: $black;
+}
+
+.work__link {
+    position: relative;
+    padding-left: 26px;
+    text-decoration: underline;
+    font-size: 20px;
+    cursor: pointer;
+    
+    &:after {
+        content: '\f08e';
+        font-family: FontAwesome;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        font-size: 16px;
+    }
+}
+
+.work__overview {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.work-image-container {
+    margin-bottom: 40px;
+}
+
+.tags {
+    text-align: center;
+}
+
+.tags__title {
+    margin-bottom: 18px;
+    font-size: 24px;
+    //text-align: center;
+}
+
+.tags-list {
+    display: inline-block;
+}
+
+.tags-list__item {
+    float: left;
+    margin-right: 10px;
+    padding: 5px 12px;
+    background: $gray;
+    font-size: 21px;
+    border-radius: 12px;
+}
+
+
+
+    /**
+    ***************************************************************
+    * =Footer
+    ***************************************************************
+    **/
 
 .social__item {
 	float: left;
@@ -130,6 +213,11 @@
                 transition: .3s background-color;
             }
         }
+    }
+
+    /* Work */
+    .work__title {
+        font-size: 45px;
     }
 }
 
