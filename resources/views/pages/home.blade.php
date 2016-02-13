@@ -17,14 +17,17 @@
             <div class="row">
                 <h2>my portfolio</h2>
             </div>
-            <div class="row">
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-                <div class="recent__item col-md-8 col-sm-8 col-xs-12"><a href=""><img src="http://lorempixel.com/360/360/" alt=""></a></div>
-            </div>
+            @if($recent)
+                <div class="row">
+                    @foreach($recent as $value)
+                        <div class="recent__item col-md-8 col-sm-8 col-xs-12">
+                            <a href="/work/{!! $value->id !!}">
+                                <img src="{!! $value->image !!}">
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                @endif
         </div>
         <!-- end recent col-md-24 -->
     </div>

@@ -9,7 +9,7 @@ use App\Http\Requests\CreateWorkRequest;
 use App\Http\Controllers\Controller;
 
 use App\Works; // for database
-use HTML;
+use File; // for file deleting
 
 class AdminController extends Controller
 {
@@ -47,30 +47,36 @@ class AdminController extends Controller
     public function store(CreateWorkRequest $request)
     {
          $works = new Works;
-         $works->title = $request->title;
+         $works->title    = $request->title;
          $works->overview = $request->overview;
          $works->platform = $request->platform;
-         $works->role = $request->role;
-         $works->link = $request->link;
-         $works->tags = $request->tags;
+         $works->role     = $request->role;
+         $works->link     = $request->link;
+         $works->tags     = $request->tags;
 
          if( $request->hasFile('image') ) {
             $image = $request->file('image');
-            // 1 получаем имя файла
-            $imageName = $image->getClientOriginalName();
-            // 1.2 Генерируем имя
-            $imageName = $this->generateImageName($imageName);
-            // 1.3 перемещаем файл
-            $request->file('image')->move($this->uploadsFolder, $imageName);
-            // 1.4 Забиваем имя файла
-            $works->image = $this->uploadsFolder . $imageName;
+             // get image
+            $imageName = $this->getImage($image, $request);
+             $works->image = $this->uploadsFolder . $imageName;
         }
 
          $works->save();
 
-
          session()->flash('flash_message', 'Сайт добавлен!');
          return redirect('admin');
+    }
+
+    public function getImage($image, $request)
+    {
+        // 1 получаем имя файла
+        $imageName = $image->getClientOriginalName();
+        // 1.2 Генерируем имя
+        $imageName = $this->generateImageName($imageName);
+        // 1.3 перемещаем файл
+        $request->file('image')->move($this->uploadsFolder, $imageName);
+        // 1.4 Забиваем имя файла
+        return $imageName;
     }
 
     /**
@@ -104,14 +110,29 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateWorkRequest $request, $id)
     {
         $works = new Works;
-        $data = $request->all();
-        dd($data);
-        $works->where('id', $id)->update($data);
+        $data['title']   = $request->title;
+        $data['overview'] = $request->overview;
+        $data['platform'] = $request->platform;
+        $data['role']     = $request->role;
+        $data['link']     = $request->link;
+        $data['tags']     = $request->tags;
 
-        return view('admin');
+        if( $request->hasFile('image') ) {
+            $image = $request->file('image');
+            $imageName = $this->getImage($image, $request);
+            $data['image'] = $this->uploadsFolder . $imageName;
+
+            // Удаляем устаревшую картинку
+            $old_image = $works->where('id', $id)->value('image');
+            File::delete($old_image);
+        }
+
+        $works->where('id', $id)->update($data);
+        session()->flash('flash_message', 'Сайт ' . $data['title'] .  ' обновлен!');
+        return redirect('admin');
     }
 
     /**

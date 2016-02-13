@@ -17,7 +17,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('contact', 'PagesController@contact');
     Route::auth();
 
-	Route::resource('admin', 'AdminController');
+    Route::resource('admin', 'AdminController');
+    Route::get('work/{id}', 'PagesController@work');
 });
 
 
