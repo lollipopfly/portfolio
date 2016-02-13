@@ -17,11 +17,13 @@
 
             <div class="tags">
                 <h3 class="tags__title">I use for this project:</h3>
-                <ul class="tags-list">
-                    <li class="tags-list__item">Node</li>
-                    <li class="tags-list__item">Sass</li>
-                    <li class="tags-list__item">Compass</li>
-                </ul>
+                @if($tags)
+                    <ul class="tags-list">
+                        @foreach($tags as $tag)
+                            <li class="tags-list__item">{!! $tag !!}</li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
         </div>
     </div>

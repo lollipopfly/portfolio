@@ -13,13 +13,13 @@ class PagesController extends Controller
 {
     public function work($id) {
         $work = Works::findOrFail($id);
-        return view('pages.work', compact('work'));
+        $tags = explode(',', $work->tags); // make tags
+        return view('pages.work', compact('work', 'tags'));
     }
 
     public function index() {
         $works = new Works;
         $recent = $works->take(6)->latest('id')->get();
-//        dd($recent);
     	return view('pages.home', compact('recent'));
     }
 
