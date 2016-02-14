@@ -15,6 +15,7 @@ class AdminController extends Controller
 {
 
     public $uploadsFolder = 'uploads/';
+    public $imageNameArr = ['image', 'display_image', 'tablet_image', 'phone_image'];
 
     /**
      * Display a listing of the resource.
@@ -54,29 +55,19 @@ class AdminController extends Controller
          $works->link     = $request->link;
          $works->tags     = $request->tags;
 
-         if( $request->hasFile('image') ) {
-            $image = $request->file('image');
-             // get image
-            $imageName = $this->getImage($image, $request);
-             $works->image = $this->uploadsFolder . $imageName;
+
+        foreach($this->imageNameArr as $imageCode) {
+            if( $request->hasFile($imageCode) ) {
+                $image = $request->file($imageCode);
+                 // get image
+                $imageName = $this->getImage($image, $request, $imageCode);
+                 $works[$imageCode] = $this->uploadsFolder . $imageName;
+            }
         }
 
          $works->save();
-
          session()->flash('flash_message', 'Сайт добавлен!');
          return redirect('admin');
-    }
-
-    public function getImage($image, $request)
-    {
-        // 1 получаем имя файла
-        $imageName = $image->getClientOriginalName();
-        // 1.2 Генерируем имя
-        $imageName = $this->generateImageName($imageName);
-        // 1.3 перемещаем файл
-        $request->file('image')->move($this->uploadsFolder, $imageName);
-        // 1.4 Забиваем имя файла
-        return $imageName;
     }
 
     /**
@@ -120,13 +111,14 @@ class AdminController extends Controller
         $data['link']     = $request->link;
         $data['tags']     = $request->tags;
 
-        if( $request->hasFile('image') ) {
-            $image = $request->file('image');
-            $imageName = $this->getImage($image, $request);
-            $data['image'] = $this->uploadsFolder . $imageName;
+        foreach($this->imageNameArr as $imageCode)
+        if( $request->hasFile($imageCode) ) {
+            $image = $request->file($imageCode);
+            $imageName = $this->getImage($image, $request, $imageCode);
+            $data[$imageCode] = $this->uploadsFolder . $imageName;
 
             // Удаляем устаревшую картинку
-            $old_image = $works->where('id', $id)->value('image');
+            $old_image = $works->where('id', $id)->value($imageCode);
             File::delete($old_image);
         }
 
@@ -149,6 +141,18 @@ class AdminController extends Controller
 
         session()->flash('flash_message' , 'Сайт ' . $work->title . ' удален!');
         return redirect('admin');
+    }
+
+    public function getImage($image, $request, $imageCode)
+    {
+        // 1 получаем имя файла
+        $imageName = $image->getClientOriginalName();
+        // 1.2 Генерируем имя
+        $imageName = $this->generateImageName($imageName);
+        // 1.3 перемещаем файл
+        $request->file($imageCode)->move($this->uploadsFolder, $imageName);
+        // 1.4 Забиваем имя файла
+        return $imageName;
     }
 
     public function generateImageName($imageName) {

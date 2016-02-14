@@ -14,6 +14,21 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('display_image', 'Добавить изображение для дисплея', ['class' => 'create_form__label']) !!}
+    {!! Form::file('display_image') !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('tablet_image', 'Добавить изображение для Планшета', ['class' => 'create_form__label']) !!}
+    {!! Form::file('tablet_image') !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('phone_image', 'Добавить изображение для телефона', ['class' => 'create_form__label']) !!}
+    {!! Form::file('phone_image') !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('platform', 'Платформа', ['class' => 'create_form__label']) !!}
     {!! Form::text('platform', null, ['class' => 'create-form__input form-control']) !!}
 </div>
