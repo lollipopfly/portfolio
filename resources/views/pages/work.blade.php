@@ -10,21 +10,56 @@
                     <a href="http://{!! $work->link !!}" target="_blank">{!! $work->link !!}</a>
                 </li>
             </ul>
-            <p class="work__overview">{!! $work->overview !!}</p>
-            <div class="work-image-container">
-                <img src="{!! $work->image !!}"  class="work__img">
+
+            <div class="overview">
+                <p class="work__overview">{!! $work->overview !!}</p>
+
+                @if($work->platform === 'responsive')
+                    <div class="work-image-container work-image-container--responsive">
+                        <div class="work-display">
+                            <div class="wrapper">
+                                <img src="{!! asset($work->display_image) !!}"  class="work__img">
+                            </div>
+                        </div>
+                        @if($work->tablet_image)
+                            <div class="work-tablet">
+                                <div class="wrapper">
+                                    <img src="{!! asset($work->tablet_image) !!}"  class="work__img">
+                                </div>
+                            </div>
+                        @endif
+                        @if($work->phone_image)
+                            <div class="work-phone">
+                                <div class="wrapper">
+                                    <img src="{!! asset($work->phone_image) !!}"  class="work__img">
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                @endif
+
+                @if($work->platform === 'display')
+                    <div class="work-image-container">
+                        <div class="work-display">
+                            <div class="wrapper">
+                                <img src="{!! asset($work->display_image) !!}"  class="work__img">
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                <img src="{!! asset($work->display_image) !!}" alt="" class="hidden-image">
             </div>
 
-            <div class="tags">
-                <h3 class="tags__title">I use for this project:</h3>
-                @if($tags)
+            @if($tags)
+                <div class="tags">
+                    <h3 class="tags__title">I use for this project:</h3>
                     <ul class="tags-list">
                         @foreach($tags as $tag)
                             <li class="tags-list__item">{!! $tag !!}</li>
                         @endforeach
                     </ul>
-                @endif
-            </div>
+                </div>
+            @endif
         </div>
     </div>
 @stop

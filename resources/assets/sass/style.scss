@@ -122,6 +122,10 @@
     }
 }
 
+.overview {
+    margin-bottom: 40px;
+}
+
 .work__overview {
     text-align: center;
     margin-bottom: 40px;
@@ -129,8 +133,71 @@
 }
 
 .work-image-container {
-    margin-bottom: 40px;
+    width: 986px;
+    height: 582px;
+    margin: 0 auto;
+    position: relative;
+
+    .wrapper {
+        overflow: hidden;
+    }
 }
+
+.work-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 980px;
+    height: 540px;
+    z-index: 0;
+    background: url('/public/images/macbook.svg') no-repeat;
+
+    .wrapper {
+        width: 701px;
+        height: 439px;
+        margin: 37px auto 0;
+    }
+}
+
+.work-tablet {
+    position: absolute;
+    bottom: 6px;
+    right: 33px;
+    width: 347px;
+    height: 443px;
+    z-index: 10;
+    background: url('/public/images/ipad.svg') no-repeat;
+
+    .wrapper {
+        width: 266px;
+        height: 355px;
+        overflow: hidden;
+        margin: 41px auto 0;
+    }
+}
+
+.work-phone {
+    position: absolute;
+    bottom: -8px;
+    right: 300px;
+    z-index: 20;
+    background: url('/public/images/iphone.svg') no-repeat;
+    width: 135px;
+    height: 275px;
+
+    .wrapper {
+        width: 104px;
+        height: 187px;
+        margin: 43px auto 0;
+        overflow: hidden;
+    }
+}
+
+.hidden-image {
+    display: none;
+}
+
+
 
 .tags {
     text-align: center;
@@ -139,7 +206,6 @@
 .tags__title {
     margin-bottom: 18px;
     font-size: 24px;
-    //text-align: center;
 }
 
 .tags-list {
@@ -174,6 +240,54 @@
 	text-align: right;
 }
 
+@media screen and (max-width: 1200px) {
+    .work-image-container {
+        width: 915px;
+        height: 542px;
+    }
+
+    .work-display {
+        width: 915px;
+        height: 484px;
+        background-size: 915px 484px;
+
+        .wrapper {
+            width: 627px;
+            height: 389px;
+            margin: 34px auto 0;
+        }
+    }
+
+    .work-tablet {
+        bottom: 25px;
+        right: 35px;
+        width: 291px;
+        height: 376px;
+        background-size: 291px 376px;
+
+        .wrapper {
+            width: 223px;
+            height: 299px;
+            overflow: hidden;
+            margin: 36px auto 0;
+        }
+    }
+
+    .work-phone {
+        bottom: -8px;
+        right: 256px;
+        width: 120px;
+        height: 247px;
+        background-size: 120px 247px;
+
+        .wrapper {
+            width: 93px;
+            height: 168px;
+            margin: 39px auto 0;
+        }
+    }
+}
+
 @media screen and (max-width: 991px) {
     .header {
         margin-bottom: 15px;
@@ -184,6 +298,52 @@
         margin-bottom: 50px;
     }
 
+    /* Works */
+    .work-image-container {
+        width: 720px;
+        height: 464px;
+    }
+
+    .work-display {
+        width: 720px;
+        height: 440px;
+        background-size: 720px 440px;
+
+        .wrapper {
+            width: 514px;
+            height: 319px;
+            margin: 49px auto 0;
+        }
+    }
+
+    .work-tablet {
+        bottom: 15px;
+        right: 35px;
+        width: 248px;
+        height: 318px;
+        background-size: 248px 318px;
+
+        .wrapper {
+            width: 190px;
+            height: 254px;
+            overflow: hidden;
+            margin: 30px auto 0;
+        }
+    }
+
+    .work-phone {
+        bottom: -15px;
+        right: 224px;
+        width: 101px;
+        height: 220px;
+        background-size: 101px 220px;
+
+        .wrapper {
+            width: 79px;
+            height: 142px;
+            margin: 38px auto 0;
+        }
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -217,11 +377,74 @@
     .work__title {
         font-size: 45px;
     }
+
+    .work-image-container {
+        width: 441px;
+        height: 245px;
+    }
+
+    .work-display {
+        width: 441px;
+        height: 245px;
+        background-size: 441px 244px;
+
+        .wrapper {
+            width: 315px;
+            height: 195px;
+            margin: 18px auto 0;
+        }
+    }
+
+    .work-tablet {
+        bottom: -17px;
+        right: 7px;
+        width: 146px;
+        height: 188px;
+        background-size: 146px 188px;
+
+        .wrapper {
+            width: 112px;
+            height: 149px;
+            overflow: hidden;
+            margin: 18px auto 0;
+        }
+    }
+
+    .work-phone {
+        bottom: -28px;
+        right: 126px;
+        width: 46px;
+        height: 92px;
+        background-size: 46px 92px;
+
+        .wrapper {
+            width: 35px;
+            height: 63px;
+            margin: 15px auto 0;
+        }
+    }
 }
 
 @media screen and (max-width: 560px) {
     .job-title {
         font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Work */
+    .work-image-container {
+        width: 100%;
+        height: auto;
+    }
+    .work-display,
+    .work-tablet,
+    .work-phone {
+        display: none;
+    }
+
+    .hidden-image {
+        display: block;
     }
 }
 
