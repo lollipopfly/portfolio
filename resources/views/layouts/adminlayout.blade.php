@@ -12,10 +12,14 @@
 		<header class="row">
 			<div class="col-md-12">
 				<h2>
-					<a href="/admin" class="logo">Portfolio</a>
+					<a href="/admin" class="logo">Home</a>
 				</h2>
+				<a href="/">Site</a>
 			</div>
 
+			<div class="col-md-4 pull-right text-right">
+				<a href="/logout">Logout <i class="fa fa-sign-out"></i></a>
+			</div>
 		</header>
 	</div>
 
