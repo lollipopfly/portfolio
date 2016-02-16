@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 	.pipe(plumber())
 	.pipe(concat('style.css'))
 	//.pipe(sass().on('error', error))
-	.pipe(sass({outputStyle: 'nested'}))
+	.pipe(sass({outputStyle: 'compress'}))
 	.pipe(postcss(processors))
 	.pipe(gulp.dest('public/build/css/'));
 });

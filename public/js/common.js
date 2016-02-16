@@ -10,10 +10,11 @@ $(document).ready(function() {
 
 	// Скролл для изображения сайта
 	if($(".wrapper--scroll")) {
-		$(".wrapper--scroll").mCustomScrollbar();
+		$(".wrapper--scroll").mCustomScrollbar({
+			axis: "y",
+			scrollInertia: 400,
+		});
 	}
-
-
 
 /**
 ***************************************************************

@@ -3080,6 +3080,9 @@ textarea {
 .navbar-default .navbar-nav > li > a {
   color: #2c2c2c; }
 
+.navbar-nav {
+  margin: 0; }
+
 /**
 * ----------------------------------------------------------------------------------------------------
 * @MEDIA
@@ -4639,11 +4642,13 @@ yx-axis
   opacity: 1; }
 
 .mCSB_inside > .mCSB_container {
-  margin-right: 12px; }
+  margin-right: 15px; }
 
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  width: 8px;
-  background-color: #2c2c2c; }
+  width: 7px;
+  background-color: #2c2c2c !important;
+  -webkit-border-radius: 5px;
+          border-radius: 5px; }
 
 .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
   background-color: #2c2c2c; }
@@ -4845,6 +4850,8 @@ yx-axis
       background-color: #2c2c2c;
       -webkit-transition: .3s background-color;
       transition: .3s background-color; }
+  .navbar__item {
+    margin-bottom: 10px; }
   /* Work */
   .work__title {
     font-size: 45px; }
