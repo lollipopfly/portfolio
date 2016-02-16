@@ -4706,6 +4706,36 @@ yx-axis
   list-style-type: circle;
   padding-left: 19px; }
 
+/* Contact */
+.contact p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 38px;
+  color: #666; }
+
+.contact-top {
+  margin-bottom: 60px; }
+
+.form-control {
+  border: 1px solid #e3e3e3 !important;
+  -webkit-border-radius: 0;
+          border-radius: 0; }
+  .form-control:hover, .form-control:focus, .form-control:active {
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important; }
+
+.contact-form__label {
+  font-size: 15px; }
+
+.contact-form__submit {
+  background: none; }
+  .contact-form__submit:hover,
+  .contact-form__submit:active,
+  .contact-form__submit:focus {
+    background: none;
+    color: #2c2c2c;
+    opacity: .8; }
+
 @media screen and (max-width: 1200px) {
   .work-image-container {
     width: 915px;
@@ -4834,7 +4864,10 @@ yx-axis
     .work-phone .wrapper {
       width: 35px;
       height: 63px;
-      margin: 15px auto 0; } }
+      margin: 15px auto 0; }
+  /* About */
+  .about-list {
+    padding-left: 0; } }
 
 @media screen and (max-width: 560px) {
   .job-title {

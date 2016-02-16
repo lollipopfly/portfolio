@@ -19,6 +19,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::resource('admin', 'AdminController');
     Route::get('work/{id}', 'PagesController@work');
+    Route::post('sendemail/', 'PagesController@sendEmail');
 });
 
 

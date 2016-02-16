@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Works; // for database
+use Mail;
 
 class PagesController extends Controller
 {
@@ -29,5 +30,29 @@ class PagesController extends Controller
 
     public function contact() {
     	return view('pages.contact');
+    }
+
+    public function sendEmail(Request $request) {
+        // validation
+        $this->validate($request, [
+            'name' => 'required|min:2',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        $message_arr = Array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message
+        );
+
+        Mail::send('emails.contact', ['mail' => $message_arr], function($message) {
+            $mail_to = env('MAIL_USERNAME');
+            $subject = 'Письмо из контактов моего Портфолио!';
+            $message->to($mail_to, 'Contact Form')->subject($subject);
+        });
+
+        session()->flash('flash_message', 'Ваше сообщение отправлено!');
+        return redirect('contact/');
     }
 }
