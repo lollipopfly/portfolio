@@ -49,3 +49,7 @@ body {
 	height: 50px !important;
 	width: 100% !important;
 }
+
+.admin-form__img {
+	max-width: 320px;
+}
