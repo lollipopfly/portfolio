@@ -24,4 +24,8 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('admin', 'AdminController');
+
+    Route::get('register', function() {
+        return redirect('login');
+    });
 });
