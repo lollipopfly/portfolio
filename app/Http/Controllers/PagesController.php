@@ -52,7 +52,7 @@ class PagesController extends Controller
             $message->to($mail_to, 'Contact Form')->subject($subject);
         });
 
-        session()->flash('flash_message', 'Ваше сообщение отправлено!');
+        session()->flash('flash_message', 'Email is sent!');
         return redirect('contact/');
     }
 }

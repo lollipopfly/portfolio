@@ -14,13 +14,18 @@
                    <img src="{!! asset('images/bike.png') !!}" alt="">
                </div>
 
-               {!! Session::get('flash_message') !!}
-               @if($errors->any())
-                   @foreach($errors->all() as $error)
-                       {{ $error }}
-                   @endforeach
-               @endif
                <div class="col-md-16 col-sm-16">
+                        @if(Session::get('flash_message'))
+                            <div class="alert-success contact-success">{!! Session::get('flash_message') !!}</div>
+                        @endif
+                       @if($errors->any())
+                           <ul class="error-list">
+                               @foreach($errors->all() as $error)
+                                   <li class="error-list__item">{{ $error }}</li>
+                               @endforeach
+                           </ul>
+                       @endif
+
                    {!! Form::open(array('url' => 'sendemail/', 'class' => 'contact-form')) !!}
                        <div class="form-group">
                            {!! Form::label('name', 'Name', ['class' => 'contact-form__label']) !!}
@@ -29,7 +34,7 @@
 
                        <div class="form-group">
                            {!! Form::label('email', 'Email', ['class' => 'contact-form__label']) !!}
-                           {!! Form::text('email', null, ['class' => 'contact-form__imput form-control']) !!}
+                           {!! Form::email('email', null, ['class' => 'contact-form__imput form-control']) !!}
                        </div>
 
                        <div class="form-group">

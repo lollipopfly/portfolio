@@ -4716,6 +4716,21 @@ yx-axis
 .contact-top {
   margin-bottom: 60px; }
 
+.error-list,
+.contact-success {
+  margin-bottom: 20px; }
+
+.contact-success {
+  padding: 13px;
+  background: #DFF0D8;
+  color: #2b542c; }
+
+.error-list__item {
+  padding: 13px;
+  background: #F2DEDE;
+  color: #a94442;
+  margin-bottom: 10px; }
+
 .form-control {
   border: 1px solid #e3e3e3 !important;
   -webkit-border-radius: 0;
