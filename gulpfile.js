@@ -29,7 +29,8 @@ gulp.task('sass', function() {
   		  'resources/assets/sass/reset.scss',
   		  'public/css/bootstrap.min.css',
 		  'resources/assets/sass/main.scss',
-		  'public/css/sprite.css',
+		  //'public/css/sprite.css',
+	      'public/css/jquery.mCustomScrollbar.css',
 		  'resources/assets/sass/style.scss',])
 	.pipe(plumber())
 	.pipe(concat('style.css'))
@@ -78,6 +79,7 @@ gulp.task('compress', function() {
 	return gulp.src([
 					'public/js/libs/jquery.js',
 					'public/js/libs/bootstrap.min.js',
+					'public/js/libs/jquery.mCustomScrollbar.concat.min.js',
 					'public/js/common.js'])
 		.pipe(plumber())
 		.pipe(concat('global.min.js'))

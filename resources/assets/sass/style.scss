@@ -154,7 +154,7 @@
 
     .wrapper {
         width: 701px;
-        height: 439px;
+        height: 435px;
         margin: 37px auto 0;
     }
 }
@@ -197,7 +197,21 @@
     display: none;
 }
 
+.mCSB_scrollTools {
+    opacity:1;
+}
+.mCSB_inside > .mCSB_container {
+    margin-right: 12px;
+}
 
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 8px;
+    background-color: $black;
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: $black;
+}
 
 .tags {
     text-align: center;
@@ -239,6 +253,39 @@
 .footer-email {
 	text-align: right;
 }
+
+/**
+***************************************************************
+* =PAGES
+***************************************************************
+**/
+
+/* About */
+.about {
+    p,
+    li {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 38px;
+        color: $gray-bold;
+    }
+}
+
+.about-block {
+    margin-bottom: 60px;
+}
+
+.about__title {
+    font-size: 50px;
+    text-transform: none;
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style-type: circle;
+    padding-left: 19px;
+}
+
 
 @media screen and (max-width: 1200px) {
     .work-image-container {

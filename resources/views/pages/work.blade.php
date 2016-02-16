@@ -41,7 +41,7 @@
                 @if($work->platform === 'display')
                     <div class="work-image-container">
                         <div class="work-display">
-                            <div class="wrapper">
+                            <div class="wrapper wrapper--scroll">
                                 <img src="{!! asset($work->display_image) !!}"  class="work__img">
                             </div>
                         </div>

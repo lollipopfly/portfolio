@@ -8,6 +8,12 @@ $(document).ready(function() {
 	// Находим ширину экрана
 	var screenWidth = $(document).width() + scrollWidth();
 
+	// Скролл для изображения сайта
+	if($(".wrapper--scroll")) {
+		$(".wrapper--scroll").mCustomScrollbar();
+	}
+
+
 
 /**
 ***************************************************************
