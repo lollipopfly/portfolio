@@ -135,9 +135,12 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $works = new Works;
+        $works = new Works();
         $work = $works->where('id', '=', $id)->first();
         $works->where('id', '=', $id)->delete();
+
+        // Remove all images
+        $this->removeImages($work);
 
         session()->flash('flash_message' , 'Сайт ' . $work->title . ' удален!');
         return redirect('admin');
@@ -160,5 +163,13 @@ class AdminController extends Controller
         $hash = str_random(4);
         $imageName = $hash . '_' . $imageName;
         return $imageName;
+    }
+
+    public function removeImages($work) {
+        foreach($this->imageNameArr as $code) {
+            if($work[$code]) {
+                File::delete($work[$code]);
+            }
+        }
     }
 }
