@@ -1,4 +1,5 @@
 public/bower/
+public/uploads/
 config/app.php
 .idea/
 /node_modules
@@ -6,5 +7,6 @@ Homestead.yaml
 Homestead.json
 .env
 .htaccess
+
 
 
