@@ -1,6 +1,7 @@
 public/bower/
 public/uploads/
 config/app.php
+config/mail.php
 .idea/
 /node_modules
 Homestead.yaml
