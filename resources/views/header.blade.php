@@ -3,13 +3,17 @@
 <head>
     <title>Timur Karshiev - Portfolio</title>
     <meta charset="utf-8">
+
+    <link rel="shortcut icon" href="{!! asset('public/images/favicon.ico') !!}" type="image/x-icon">
+    <link rel="icon" href="{!! asset('public/images/favicon.ico') !!}" type="image/x-icon">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="{!! asset('public/build/css/style.css') !!}" rel="stylesheet" />
 
     <!--[if lt IE 9]>
-    <script src="{!! asset('js/libs/html5shiv.min.js') !!}" />
+    <script src="{!! asset('public/js/libs/html5shiv.min.js') !!}" />
     <![endif]-->
 </head>
 <body>
