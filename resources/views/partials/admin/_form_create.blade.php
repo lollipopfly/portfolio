@@ -9,6 +9,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('sort', 'Сортировка', ['class' => 'create_form__label']) !!}
+    {!! Form::text('sort', null, ['class' => 'create-form__input form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('image', 'Добавить изображение', ['class' => 'create_form__label']) !!}
     {!! Form::file('image') !!}
 </div>

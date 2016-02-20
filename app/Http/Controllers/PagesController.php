@@ -20,7 +20,7 @@ class PagesController extends Controller
 
     public function index() {
         $works = new Works;
-        $recent = $works->take(6)->latest('id')->get();
+        $recent = $works->take(6)->orderBy('sort', 'asc')->latest('id')->get();
     	return view('pages.home', compact('recent'));
     }
 

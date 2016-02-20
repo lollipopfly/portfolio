@@ -7,10 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddImagesFieldsToWorks' => $baseDir . '/database/migrations/2016_02_14_110331_add_images_fields_to_works.php',
+    'AddSortFieldToWorks' => $baseDir . '/database/migrations/2016_02_20_101505_add_sort_field_to_works.php',
+    'AddSortintFieldInWorks' => $baseDir . '/database/migrations/2016_02_20_105557_add_sortint_field_in_works.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateWorksTable' => $baseDir . '/database/migrations/2016_02_08_125624_create_works_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
+    'DeleteSortFieldInWorks' => $baseDir . '/database/migrations/2016_02_20_105426_delete_sort_field_in_works.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',

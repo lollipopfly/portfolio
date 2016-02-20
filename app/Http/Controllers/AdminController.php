@@ -24,7 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-    	$works = Works::take(10)->latest('created_at')->paginate(10);
+    	$works = Works::take(10)->orderBy('sort', 'asc')->latest('created_at')->paginate(10);
 
         return view('admin.index', compact('works'));
     }
@@ -50,6 +50,7 @@ class AdminController extends Controller
          $works = new Works;
          $works->title    = $request->title;
          $works->overview = $request->overview;
+         $works->sort     = $request->sort;
          $works->platform = $request->platform;
          $works->role     = $request->role;
          $works->link     = $request->link;
@@ -106,6 +107,7 @@ class AdminController extends Controller
         $works = new Works;
         $data['title']   = $request->title;
         $data['overview'] = $request->overview;
+        $data['sort'] = $request->sort;
         $data['platform'] = $request->platform;
         $data['role']     = $request->role;
         $data['link']     = $request->link;
