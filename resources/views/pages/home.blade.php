@@ -26,7 +26,7 @@
                         </div>
                     @endforeach
                 </div>
-                @endif
+              @endif
         </div>
         <!-- end recent col-md-24 -->
     </div>
