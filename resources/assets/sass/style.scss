@@ -72,6 +72,7 @@
 
 .recent__item {
   margin-bottom: 20px;
+  overflow: hidden;
 
   a {
     display: block;
@@ -80,6 +81,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
+    transition: transform .4s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 

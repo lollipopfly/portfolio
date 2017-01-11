@@ -4531,14 +4531,23 @@ yx-axis
   text-align: center; }
 
 .recent__item {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  overflow: hidden; }
   .recent__item a {
     display: block;
     width: 100%;
     height: 300px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 90%; }
+    background-size: 90%;
+    -webkit-transition: -webkit-transform .4s linear;
+    transition: -webkit-transform .4s linear;
+    transition: transform .4s linear;
+    transition: transform .4s linear, -webkit-transform .4s linear; }
+    .recent__item a:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
 
 /*------------------------------------*    Work
 \*------------------------------------*/
