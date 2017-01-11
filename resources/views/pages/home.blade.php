@@ -21,8 +21,7 @@
                 <div class="row">
                     @foreach($recent as $value)
                         <div class="recent__item col-md-8 col-sm-8 col-xs-12">
-                            <a href="/work/{!! $value->id !!}">
-                                <img src="{!! $value->image !!}">
+                            <a href="/work/{!! $value->id !!}" style="background-image: url({!! $value->image !!})">
                             </a>
                         </div>
                     @endforeach

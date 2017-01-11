@@ -1,0 +1,60 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/timskiy/.rvm/gems/ruby-2.2.3/bin:/Users/timskiy/.rvm/gems/ruby-2.2.3@global/bin:/Users/timskiy/.rvm/rubies/ruby-2.2.3/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:/Applications/MAMP/bin/php/php5.6.2/bin:/Users/timskiy/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/timskiy/go/bin:/Users/timskiy/.composer/vendor/bin:/Users/timskiy/.rvm/bin
+
+Yarn version: 
+  0.17.9
+
+Node version: 
+  4.4.5
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "gulp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "dependencies": {
+      "gulp": "*",
+      "gulp-postcss": "*",
+      "gulp-uglify": "*",
+      "autoprefixer": "*",
+      "gulp.spritesmith": "*",
+      "gulp-sass": "*",
+      "merge-stream": "*"
+    },
+    "devDependencies": {
+      "browser-sync": "*",
+      "gulp-concat": "*",
+      "gulp-notify": "*",
+      "gulp-plumber": "*",
+      "gulp-sourcemaps": "*",
+      "gulp-uglify": "^*",
+      "laravel-elixir": "*",
+      "laravel-elixir-livereload": "*",
+      "postcss-custom-selectors": "*",
+      "postcss-font-magician": "*",
+      "postcss-size": "*",
+      "remove": "*"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "lollipop.fly",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, open '/Users/timskiy/Library/Caches/Yarn/npm-source-map-resolve-0.3.1-610f6122a445b8dd51535a2a71b783dfc1248761/package.json'
+      at Error (native)

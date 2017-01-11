@@ -126,7 +126,6 @@ figure {
 
 hr {
   -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -164,7 +163,6 @@ input {
 
 input[type="checkbox"], input[type="radio"] {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
@@ -174,7 +172,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input[type="search"] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
@@ -204,12 +201,10 @@ td, th {
 
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *:before, *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html {
@@ -1265,7 +1260,6 @@ label {
 
 input[type="search"] {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 input[type="radio"], input[type="checkbox"] {
@@ -3345,7 +3339,6 @@ yx-axis
   padding-right: 30px;
   padding-bottom: 30px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .mCSB_vertical_horizontal > .mCSB_scrollTools.mCSB_scrollTools_vertical {
@@ -4444,7 +4437,6 @@ yx-axis
   border-color: #fff;
   border-color: rgba(255, 255, 255, 0.2);
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail {
@@ -4540,6 +4532,13 @@ yx-axis
 
 .recent__item {
   margin-bottom: 10px; }
+  .recent__item a {
+    display: block;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%; }
 
 /*------------------------------------*    Work
 \*------------------------------------*/
